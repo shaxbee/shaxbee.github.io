@@ -5,7 +5,7 @@ layout: post
 
 It seems that prepending to bytearray is ~50 times slower than preallocating space and overwriting data directly.
 
-{% highlight shell %}
+{% highlight bash %}
 > # prepend
 > python -m timeit -s "b = bytearray()" "b[:0] = 'foo'"
 100000 loops, best of 3: 17 usec per loop
