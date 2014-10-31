@@ -37,11 +37,13 @@ def make_space(buf, size):
    buf[-old_size:] = buf[0:old_size]
 {% endhighlight %}
 
-Such operation can be then used to replace prepending:
+Such operation can be then used to replace slice prepending:
 
 {% highlight python %}
 import struct
 fmt = struct.Struct('<I')
+
+
 def prepend_uint(buf, offset, value):
     new_offset = offset + fmt.size
     make_space(buf, new_offset)
