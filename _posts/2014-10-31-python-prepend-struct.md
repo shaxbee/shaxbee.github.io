@@ -22,7 +22,7 @@ The cost would be however amortized for multiple prepend operations.
 
 {% highlight python %}
 def make_space(buf, size, padding=bytearray(1024)):
-    remaining = len(buf) - size
+    remaining = size - len(buf)
     while remaining > 0:
         buf[:0] = padding
         remaining -= len(padding)
@@ -32,6 +32,19 @@ Resizing operation would be much cheaper if there would be equivalent of C-API P
 
 {% highlight python %}
 def make_space(buf, size):
-   buf.resize(len(buf) + size)
-   buf[size:] = buf[0:len(buf) - size]
+   old_size = len(buf)
+   buf.resize(max(old_size * 2, size))
+   buf[-old_size:] = buf[0:old_size]
+{% endhighlight %}
+
+Such operation can be then used to replace prepending:
+
+{% highlight python %}
+import struct
+fmt = struct.Struct('<I')
+def prepend_uint(buf, offset, value):
+    new_offset = offset + fmt.size
+    make_space(buf, new_offset)
+    fmt.pack_into(buf, new_offset, value)
+    return new_offset
 {% endhighlight %}
