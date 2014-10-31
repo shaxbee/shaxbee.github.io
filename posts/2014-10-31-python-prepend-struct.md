@@ -12,7 +12,7 @@ Prepend:
 
 Overwrite:
 ```shell 
-python -m timeit -s "b = bytearray(1024)" "b[0:3] = 'foo'"
+> python -m timeit -s "b = bytearray(1024)" "b[0:3] = 'foo'"
 1000000 loops, best of 3: 0.356 usec per loop
 ```
 
