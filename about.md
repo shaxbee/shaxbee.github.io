@@ -4,12 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Technologist passionate about Software Development, Rocket Science and Electric Cars.
+Worked with variety of programming languages including Perl, Python, Scala and C++. 
 
-### More Information
+Experienced in mixing and matching different technologies and paradigms, building distributed, hybrid systems using mix of statically typed and dynamic garbage-collected languages.
 
-A place to include any other types of information that you'd like to include about yourself. 
+Active developer advocate - finding gaps and solving problems in technology stack, development process and work environment which affect developers well-being and performance.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[shaxbee@gmail.com](mailto:shaxbee@gmail.com)
