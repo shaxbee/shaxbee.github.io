@@ -1,9 +1,9 @@
 ---
-title: Performance of prepending to bytearray
+title: Python Binary Data Part 1 - Performance of prepending to bytearray
 layout: post
 ---
 
-While working on Python flatbuffers binding i've noticed that prepending to bytearray is ~50 times slower than preallocating space and overwriting data directly.
+I've noticed that prepending to bytearray is ~50 times slower than preallocating space and overwriting data directly.
 
 {% highlight bash %}
 > # prepend
